@@ -20,7 +20,10 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       <Sidebar />
       <div className="flex flex-col flex-1 overflow-hidden">
         <Header user={user} profile={profile} />
-        <main className="flex-1 overflow-auto p-6">{children}</main>
+        {/* pt-0 on md+ (header handles spacing), pt-14 on mobile to clear the fixed hamburger button */}
+        <main className="flex-1 overflow-auto p-4 md:p-6">
+          {children}
+        </main>
       </div>
     </div>
   );
